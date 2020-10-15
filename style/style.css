@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica Neue;
+}
+
+html {
+    height: 100%;
+}
+
+@font-face {
+    font-family: "square";
+    src: url(../fonts/Square.ttf);
+}
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url(../fonts/HelveticaNeue-Th.otf);
+}
+
+nav.my-nav {
+    background-color: #01000D;
+    height: 90px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    padding-top: 25px;
+}
+
+nav.my-nav h1 {
+    color: white;
+    font-family: square;
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.center {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+div.titulo {
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 7%;
+    text-align: center;
+}
+
+div.titulo h1 {
+    font-size: 40px;
+}
+
+section.form-group {
+    width: 85%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form {
+    padding-top: 9%;
+    width: 100%;
+}
+
+form div.input-name label {
+    font-size: 25px;
+}
+
+form div.input-name input {
+    width: 80%;
+    height: 55px;
+    max-width: 800px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline: 0;
+    padding: 0 15px;
+    font-size: 20px;
+    margin: 0 15px;
+    margin-bottom: 55px;
+}
+
+form div.input-btn input {
+    width: 175px;
+    height: 47px;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #F28E13;
+    transition: 0.3s;
+    font-size: 22px;
+    font-weight: 500;
+    outline: 0;
+}
+
+form div.input-btn input:hover {
+    background-color: #F26513;
+}
+
+div.searching-box {
+    width: 80%;
+    text-align: center;
+    margin: 2% auto;
+    visibility: hidden;
+    animation: left-in 0.3s;
+}
+
+.clicked {
+    animation: clicked 1s;
+}
+
+div.result-p {
+    width: 80%;
+    text-align: center;
+    margin: 2% auto;
+    display: none;
+    animation: left-in 1s;
+}
+
+div.result-p p {
+    font-size: 25px;
+}
+
+@media screen and (max-width: 615px) {
+    form {
+        padding-top: 25px;
+    }
+    form div.input-name input {
+        margin-top: 15px;
+    }
+    div.titulo {
+        width: 80%;
+    }
+    div.result-p {
+        margin: 6% auto;
+    }
+}
+
+@media screen and (max-width:400px) {
+    div.result-p {
+        margin: 10% auto;
+    }
+}
+
+@media screen and (max-width: 572px) {
+    div.titulo h1 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width:336px) {
+    div.titulo h1 {
+        font-size: 30px;
+    }
+}
+
+@keyframes left-in {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes clicked {
+    0% {
+        background-color: #F28E13;
+    }
+    50% {
+        background-color: #F26513;
+    }
+    100% {
+        background-color: #F28E13;
+    }
+}
