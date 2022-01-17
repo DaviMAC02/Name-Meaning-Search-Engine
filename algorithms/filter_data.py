@@ -38,14 +38,15 @@ for link in links:
     result_meaning_pos = result_meaning[0].find(".")
 
     result_meaning[0] = result_meaning[0][:result_meaning_pos + 1]
+    print(nome)
 
-    print("Inserting" , nome, " and its meaning...")
+    # print("Inserting" + nome + " and its meaning...")
 
-    cursor_filter.execute("INSERT  OR IGNORE INTO NameMeaning (name, meaning) VALUES (?, ?)", (nome, result_meaning[0]))
-    conn_filter.commit()
+    # cursor_filter.execute("INSERT  OR IGNORE INTO NameMeaning (name, meaning) VALUES (?, ?)", (nome, result_meaning[0]))
+    # conn_filter.commit()
 
-    cursor_pages.execute("UPDATE Pages SET filtered = 'done' where url = ?", (link[0], ))
-    conn_pages.commit()
+    # cursor_pages.execute("UPDATE Pages SET filtered = 'done' where url = ?", (link[0], ))
+    # conn_pages.commit()
 
 
 
