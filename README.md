@@ -3,7 +3,7 @@ Personal project developed with no commercial purpose, uses web scraping algorit
 
 How to use:
 
-1- Execute the scapper.py file
-2- Execute the filter_data.py file
-3- Execute the jsJSON_generator.py file
+1- Execute the scapper.py file\n
+2- Execute the filter_data.py file\n
+3- Execute the jsJSON_generator.py file\n
 4- Finally test the search engine with the new inserted data
