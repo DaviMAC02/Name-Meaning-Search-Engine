@@ -34,8 +34,13 @@ i = int(input('How many pages do you want to retrieve?\n'))
 for i in range(0,i):
         cursor_pages.execute("SELECT url FROM Pages where filtered is NULL and html is NULL")
         links = cursor_pages.fetchall()
-        url =  links[0][0]        
-        html = urlopen(url, context=ctx).read()
+        url =  links[0][0]  
+        try:      
+            html = urlopen(url, context=ctx).read()
+        except:
+            cursor_pages.execute("UPDATE Pages SET html = 'none' where url = ?", (url,))
+            continue
+
         html = html.decode('utf-8')
         print('Retrieving: ' + url)
         cursor_pages.execute("UPDATE Pages SET html = ? where url = ?", (html,url))
