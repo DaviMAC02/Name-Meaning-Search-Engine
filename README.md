@@ -1,4 +1,6 @@
 # Name-Meaning-Search-Engine
+## Search engine that returns the meanind of a certain name
+
 Personal project developed with no commercial purpose, uses web scraping algorithms made in python to retrieve, process and vizualize data. Skills used: Python language in general, urllib, Beaultiful Soup (BS4), SQLite, JSON, HTML, CSS, JS, Responsive Design.
 
 How to use:
