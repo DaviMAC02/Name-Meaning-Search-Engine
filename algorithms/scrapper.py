@@ -18,6 +18,7 @@ links = cursor_pages.fetchall()
 if not links:
     url = 'https://www.dicionariodenomesproprios.com.br/'
     html = urlopen(url, context=ctx).read()
+    html = html.decode('utf-8')
     soup = BeautifulSoup(html, "html.parser", from_encoding="utf-8")
 
     # Retrieve all of the anchor tags
@@ -33,9 +34,10 @@ i = int(input('How many pages do you want to retrieve?\n'))
 for i in range(0,i):
         cursor_pages.execute("SELECT url FROM Pages where filtered is NULL and html is NULL")
         links = cursor_pages.fetchall()
-        url =  links[0][0]
-        print('Retrieving: ' + url)
+        url =  links[0][0]        
         html = urlopen(url, context=ctx).read()
+        html = html.decode('utf-8')
+        print('Retrieving: ' + url)
         cursor_pages.execute("UPDATE Pages SET html = ? where url = ?", (html,url))
         conn_pages.commit()
         soup = BeautifulSoup(html, "html.parser")
